@@ -1,0 +1,42 @@
+<!-- main/templates/main/base.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Kredible Construction{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Kredible Construction</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                <!-- Add other navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <!-- Add content for the contact section -->
+        <h4>Email: kredibleconstructionsltd@gmail.com</h4>
+        <h4>Instagram: kredibleconstructionsltd</h4>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Kredible Construction. All rights reserved.</p>
+    </footer>
+    <script src="{% static 'main/js/scripts.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- main/templates/main/portfolio.html -->
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-items">
+            {% for item in portfolio_items %}
+                <div class="portfolio-item">
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.description }}</p>
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
